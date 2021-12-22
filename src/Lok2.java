@@ -22,11 +22,18 @@ public class Lok2 extends Thread{
     }
 
     public void enterLok1() throws InterruptedException {
+        if(remaining != 0){
+        drive();}
         track.append(2);
     }
 
     public void exitLok1() throws InterruptedException {
         track.remove(2);
         lok1.queued = true;
+    }
+
+    @Override
+    public void run() {
+
     }
 }
